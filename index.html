@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZERO COFFEE - Menu</title>
+    <style>
+      :root {
+        --blue: #1f4fd8;
+        --light-blue: #eaf0ff;
+        --beige: #f6e8d5;
+        --dark: #1f2937;
+      }
+
+      * {
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(135deg, var(--light-blue), #ffffff);
+        padding: 24px;
+        color: var(--dark);
+      }
+
+      .menu {
+        max-width: 1000px;
+        margin: auto;
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 24px;
+        background: var(--blue);
+        color: #fff;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 36px;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .col {
+        padding: 24px;
+      }
+
+      .col.left {
+        background: var(--light-blue);
+      }
+
+      .col.right {
+        background: var(--beige);
+      }
+
+      .section {
+        margin-bottom: 28px;
+      }
+
+      .section h2 {
+        margin: 0 0 12px;
+        color: var(--blue);
+        font-size: 22px;
+        border-bottom: 2px solid var(--blue);
+        display: inline-block;
+        padding-bottom: 4px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        font-size: 15px;
+      }
+
+      li span.price {
+        font-weight: 600;
+      }
+
+      .highlight {
+        color: #e11d48;
+        font-weight: 600;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 16px;
+        font-size: 13px;
+        color: #555;
+        background: #f3f4f6;
+      }
+
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="header">
+        <h1>ZERO COFFEE</h1>
+      </div>
+
+      <div class="grid">
+        <!-- LEFT -->
+        <div class="col left">
+          <div class="section">
+            <h2>Cà phê phin</h2>
+            <ul>
+              <li><span>Phin đen</span><span class="price">25</span></li>
+              <li><span>Phin sữa</span><span class="price">30</span></li>
+              <li><span>Phin xỉu</span><span class="price">35</span></li>
+              <li>
+                <span class="highlight">Phin muối</span
+                ><span class="price">35</span>
+              </li>
+              <li><span>Phin trứng</span><span class="price">35</span></li>
+              <li>
+                <span class="highlight">Phin chanh đá</span
+                ><span class="price">35</span>
+              </li>
+              <li><span>Cacao muối</span><span class="price">40</span></li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Cà phê máy</h2>
+            <ul>
+              <li><span>Đen máy</span><span class="price">30</span></li>
+              <li><span>Nâu máy</span><span class="price">35</span></li>
+              <li><span>Bạc xỉu</span><span class="price">40</span></li>
+              <li>
+                <span class="highlight">Phê muối</span
+                ><span class="price">40</span>
+              </li>
+              <li><span>Phê trứng</span><span class="price">40</span></li>
+              <li>
+                <span class="highlight">Phê chanh đá</span
+                ><span class="price">40</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Hoa quả ép</h2>
+            <ul>
+              <li><span>Chanh tươi</span><span class="price">25</span></li>
+              <li>
+                <span>Chanh leo kim quất</span><span class="price">30</span>
+              </li>
+              <li><span>Dứa ép</span><span class="price">30</span></li>
+              <li><span>Cam ép</span><span class="price">35</span></li>
+              <li><span>Cóc ép</span><span class="price">35</span></li>
+              <li><span>Nho Yakult</span><span class="price">35</span></li>
+              <li><span>Ép mix</span><span class="price">40</span></li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Trà hoa quả</h2>
+            <ul>
+              <li><span>Tắc xí muội</span><span class="price">30</span></li>
+              <li><span>Tắc đào Hibicus</span><span class="price">35</span></li>
+              <li><span>Chanh hoàng kim</span><span class="price">30</span></li>
+              <li><span>Chanh nho đen</span><span class="price">35</span></li>
+              <li><span>Hibicus xí muội</span><span class="price">40</span></li>
+              <li><span>Đào cam sả</span><span class="price">40</span></li>
+              <li><span>Xoài chanh leo</span><span class="price">45</span></li>
+              <li>
+                <span>Hoa quả nhiệt đới</span><span class="price">45</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="col right">
+          <div class="section">
+            <h2>Freeze</h2>
+            <ul>
+              <li>
+                <span>Sinh tố (bơ / xoài)</span><span class="price">40</span>
+              </li>
+              <li>
+                <span class="highlight">Freeze matcha</span
+                ><span class="price">50</span>
+              </li>
+              <li>
+                <span>Freeze việt quất</span><span class="price">50</span>
+              </li>
+              <li>
+                <span>Xoài cốt dừa non</span><span class="price">50</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Sữa chua</h2>
+            <ul>
+              <li>
+                <span>Sữa chua trân châu</span><span class="price">35</span>
+              </li>
+              <li>
+                <span>Sữa chua nha đam</span><span class="price">35</span>
+              </li>
+              <li><span>Sữa chua xoài</span><span class="price">35</span></li>
+              <li><span>Sữa chua cacao</span><span class="price">30</span></li>
+              <li>
+                <span>Sữa chua hoa quả</span><span class="price">40</span>
+              </li>
+              <li>
+                <span>Sữa chua hạt đác</span><span class="price">40</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Topping</h2>
+            <ul>
+              <li><span>Nha đam</span><span class="price">7</span></li>
+              <li><span>Trân châu trắng</span><span class="price">7</span></li>
+              <li><span>Thạch dừa</span><span class="price">7</span></li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Đồ khô</h2>
+            <ul>
+              <li><span>Hướng dương</span><span class="price">15</span></li>
+              <li><span>Heo khô</span><span class="price">20</span></li>
+              <li>
+                <span class="highlight">Nấm té cay</span
+                ><span class="price">35</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">Giá tính bằng nghìn VNĐ · ZERO COFFEE</div>
+    </div>
+  </body>
+</html>
