@@ -3,252 +3,698 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZERO COFFEE - Menu</title>
+    <title>ZERO COFFEE - Menu Tết 2026</title>
     <style>
+      :root {
+        --blue: #1f4fd8;
+        --light-blue: #eaf0ff;
+        --beige: #f6e8d5;
+        --dark: #1f2937;
+        --tet-red: #c8102e;
+        --tet-gold: #b8860b;
+      }
+
       * {
-        margin: 0;
-        padding: 0;
         box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: #f8f1e9;
-        color: #333;
-        line-height: 1.5;
+        margin: 0;
+        background:
+          linear-gradient(rgba(200, 16, 46, 0.35), rgba(184, 134, 11, 0.25)),
+          url("https://s.alicdn.com/@sc02/kf/H53dcce2d304e4e2390b8122eb475cd97F.jpg")
+            no-repeat center center fixed;
+        background-size: cover;
+        padding: 24px;
+        color: var(--dark);
+        min-height: 100vh;
       }
 
-      .container {
+      .menu {
         max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px;
+        margin: auto;
+        background: rgba(
+          255,
+          255,
+          255,
+          0.92
+        ); /* Nền trắng mờ để nổi trên background */
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(184, 134, 11, 0.5); /* Shadow vàng Tết */
+        border: 3px solid var(--tet-gold);
       }
 
       .header {
-        background: #1e40af;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        border-radius: 12px 12px 0 0;
-        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 28px 28px;
+        background: linear-gradient(135deg, var(--tet-red), var(--tet-gold));
+        color: #fff;
+        position: relative;
+      }
+
+      .header::before {
+        content: "CHÚC MỪNG NĂM MỚI 2026";
+        position: absolute;
+        top: 12px;
+        font-size: 18px;
         font-weight: bold;
+        color: var(--tet-gold);
+        text-shadow: 1px 1px 3px var(--tet-red);
         letter-spacing: 1px;
       }
 
-      .menu-grid {
+      .header h1 {
+        margin: 0;
+        font-size: 42px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background: #fffaf0;
-        border-radius: 0 0 12px 12px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       }
 
-      .column {
-        padding: 25px 20px;
+      .col {
+        padding: 28px 24px;
       }
 
-      .column.left {
-        background: #fefaf5;
-      }
-      .column.right {
-        background: #f5f9ff;
+      .col.left {
+        background: var(--light-blue);
       }
 
-      h2 {
-        color: #1e40af;
-        font-size: 1.5rem;
-        margin-bottom: 18px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid #d1d5db;
+      .col.right {
+        background: var(--beige);
+      }
+
+      .section {
+        margin-bottom: 32px;
+      }
+
+      .section h2 {
+        margin: 0 0 16px;
+        color: var(--tet-red);
+        font-size: 24px;
+        font-weight: 700;
+        border-bottom: 3px solid var(--tet-gold);
+        display: inline-block;
+        padding-bottom: 6px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
       }
 
       .item {
         display: flex;
         align-items: center;
-        margin-bottom: 16px;
         gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+
+      .item:hover {
+        background: rgba(255, 215, 0, 0.15); /* Vàng nhạt Tết */
+        border-radius: 8px;
+        transform: translateY(-2px);
       }
 
       .item img {
         width: 60px;
         height: 60px;
         object-fit: cover;
-        border-radius: 8px;
+        border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         flex-shrink: 0;
       }
 
-      .name-price {
+      .item-info {
         flex: 1;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 1.05rem;
+        font-size: 15px;
       }
 
-      .name {
+      .item-name {
         font-weight: 500;
       }
 
       .price {
-        color: #dc2626;
-        font-weight: bold;
-        min-width: 50px;
+        font-weight: 700;
+        min-width: 60px;
         text-align: right;
+        color: var(--tet-red);
       }
 
-      .special {
-        color: #c2410c;
+      .highlight .item-name {
+        color: var(--tet-red);
         font-weight: 600;
       }
 
       .footer {
         text-align: center;
-        margin-top: 20px;
-        color: #666;
-        font-size: 0.9rem;
+        padding: 20px;
+        font-size: 14px;
+        color: #fff;
+        background: var(--tet-red);
+        border-top: 3px solid var(--tet-gold);
       }
 
       @media (max-width: 768px) {
-        .menu-grid {
+        .grid {
           grid-template-columns: 1fr;
         }
-        .column.left,
-        .column.right {
-          background: #fffaf0;
+        .col.left,
+        .col.right {
+          background: rgba(255, 255, 255, 0.9) !important;
+        }
+        .item img {
+          width: 50px;
+          height: 50px;
+        }
+        .header h1 {
+          font-size: 32px;
         }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="header">ZERO COFFEE</div>
+    <div class="menu">
+      <div class="header">
+        <h1>ZERO COFFEE</h1>
+      </div>
 
-      <div class="menu-grid">
-        <!-- Cột trái -->
-        <div class="column left">
-          <h2>Cà phê phin</h2>
-          <div class="item">
-            <img
-              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=100"
-              alt="Phin đen"
-            />
-            <div class="name-price">
-              <span class="name">Phin đen</span>
-              <span class="price">25k</span>
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="https://images.unsplash.com/photo-1444418185997-1145401129e8?w=100"
-              alt="Phin sữa"
-            />
-            <div class="name-price">
-              <span class="name">Phin sữa</span>
-              <span class="price">30k</span>
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=100"
-              alt="Phin muối"
-            />
-            <div class="name-price">
-              <span class="name special">Phin muối</span>
-              <span class="price">35k</span>
-            </div>
+      <div class="grid">
+        <!-- LEFT COLUMN -->
+        <div class="col left">
+          <div class="section">
+            <h2>Cà phê phin</h2>
+            <ul>
+              <li class="item">
+                <img
+                  src="https://m.media-amazon.com/images/I/71yaxF-JSeL._AC_UF894,1000_QL80_.jpg"
+                  alt="Phin đen"
+                />
+                <div class="item-info">
+                  <span class="item-name">Phin đen</span
+                  ><span class="price">25</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://eatlittlebird.com/wp-content/uploads/2017/08/vietnamese-coffee-1.jpg"
+                  alt="Phin sữa"
+                />
+                <div class="item-info">
+                  <span class="item-name">Phin sữa</span
+                  ><span class="price">30</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://s3.ap-southeast-1.amazonaws.com/images.tubudd.com/blog/vietnam_drip_coffee_3_b24a6efc0f.png"
+                  alt="Phin xỉu"
+                />
+                <div class="item-info">
+                  <span class="item-name">Phin xỉu</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item highlight">
+                <img
+                  src="https://www.chowhound.com/img/gallery/salted-coffee-the-modern-vietnamese-cafe-trend-with-fabled-origins/intro-1713888762.jpg"
+                  alt="Phin muối"
+                />
+                <div class="item-info">
+                  <span class="item-name">Phin muối</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://www.legalnomads.com/wp-content/uploads/2013/01/P2136752.jpg"
+                  alt="Phin trứng"
+                />
+                <div class="item-info">
+                  <span class="item-name">Phin trứng</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item highlight">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0521/4476/7142/files/Ca-phe-muoi-cocochine.jpg?v=1749733002"
+                  alt="Phin chanh đá"
+                />
+                <div class="item-info">
+                  <span class="item-name">Phin chanh đá</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://vlstudies.com/wp-content/uploads/2023/08/Vietnamese-phin-coffee-filter.jpg"
+                  alt="Cacao muối"
+                />
+                <div class="item-info">
+                  <span class="item-name">Cacao muối</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          <h2>Cà phê máy</h2>
-          <div class="item">
-            <img
-              src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=100"
-              alt="Đen máy"
-            />
-            <div class="name-price">
-              <span class="name">Đen máy</span>
-              <span class="price">30k</span>
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="https://images.unsplash.com/photo-1577968898878-3f58e3f94c5b?w=100"
-              alt="Nâu máy"
-            />
-            <div class="name-price">
-              <span class="name">Nâu máy</span>
-              <span class="price">35k</span>
-            </div>
+          <div class="section">
+            <h2>Cà phê máy</h2>
+            <ul>
+              <li class="item">
+                <img
+                  src="https://s3.ap-southeast-1.amazonaws.com/images.tubudd.com/blog/vietnam_drip_coffee_3_b24a6efc0f.png"
+                  alt="Đen máy"
+                />
+                <div class="item-info">
+                  <span class="item-name">Đen máy</span
+                  ><span class="price">30</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://eatlittlebird.com/wp-content/uploads/2017/08/vietnamese-coffee-1.jpg"
+                  alt="Nâu máy"
+                />
+                <div class="item-info">
+                  <span class="item-name">Nâu máy</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://www.legalnomads.com/wp-content/uploads/2013/01/P2136752.jpg"
+                  alt="Bạc xỉu"
+                />
+                <div class="item-info">
+                  <span class="item-name">Bạc xỉu</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+              <li class="item highlight">
+                <img
+                  src="https://www.chowhound.com/img/gallery/salted-coffee-the-modern-vietnamese-cafe-trend-with-fabled-origins/intro-1713888762.jpg"
+                  alt="Phê muối"
+                />
+                <div class="item-info">
+                  <span class="item-name">Phê muối</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://www.legalnomads.com/wp-content/uploads/2013/01/P2136752.jpg"
+                  alt="Phê trứng"
+                />
+                <div class="item-info">
+                  <span class="item-name">Phê trứng</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+              <li class="item highlight">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0521/4476/7142/files/Ca-phe-muoi-cocochine.jpg?v=1749733002"
+                  alt="Phê chanh đá"
+                />
+                <div class="item-info">
+                  <span class="item-name">Phê chanh đá</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          <h2>Trà hoa quả</h2>
-          <div class="item">
-            <img
-              src="https://images.unsplash.com/photo-1622484212850-eb596d0f1777?w=100"
-              alt="Trà hibiscus"
-            />
-            <div class="name-price">
-              <span class="name">Trà hibiscus</span>
-              <span class="price">35k</span>
-            </div>
+          <div class="section">
+            <h2>Hoa quả ép</h2>
+            <ul>
+              <li class="item">
+                <img
+                  src="https://media.istockphoto.com/id/167609870/photo/glass-of-orange-juice.jpg?s=1024x1024&w=is&k=20&c=1IWuSOeCfJABXKkfidFX8krr_26TsBMXNo81Ns3_4_c="
+                  alt="Chanh tươi"
+                />
+                <div class="item-info">
+                  <span class="item-name">Chanh tươi</span
+                  ><span class="price">25</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-lime-slices-closeup-image-ai-generated-healthy-drink-refreshing-glass-freshly-squeezed-beverage-333187714.jpg"
+                  alt="Chanh leo kim quất"
+                />
+                <div class="item-info">
+                  <span class="item-name">Chanh leo kim quất</span
+                  ><span class="price">30</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-plastic-cup-sunny-outdoor-market-table-chilled-cubes-realistic-style-urban-background-concept-398255330.jpg"
+                  alt="Dứa ép"
+                />
+                <div class="item-info">
+                  <span class="item-name">Dứa ép</span
+                  ><span class="price">30</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://media.istockphoto.com/id/167609870/photo/glass-of-orange-juice.jpg?s=1024x1024&w=is&k=20&c=1IWuSOeCfJABXKkfidFX8krr_26TsBMXNo81Ns3_4_c="
+                  alt="Cam ép"
+                />
+                <div class="item-info">
+                  <span class="item-name">Cam ép</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-lime-slices-closeup-image-ai-generated-healthy-drink-refreshing-glass-freshly-squeezed-beverage-333187714.jpg"
+                  alt="Cóc ép"
+                />
+                <div class="item-info">
+                  <span class="item-name">Cóc ép</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-plastic-cup-sunny-outdoor-market-table-chilled-cubes-realistic-style-urban-background-concept-398255330.jpg"
+                  alt="Nho Yakult"
+                />
+                <div class="item-info">
+                  <span class="item-name">Nho Yakult</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-lime-slices-closeup-image-ai-generated-healthy-drink-refreshing-glass-freshly-squeezed-beverage-333187714.jpg"
+                  alt="Ép mix"
+                />
+                <div class="item-info">
+                  <span class="item-name">Ép mix</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+            </ul>
           </div>
-          <!-- Thêm các món khác tương tự nếu cần -->
+
+          <div class="section">
+            <h2>Trà hoa quả</h2>
+            <ul>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-lime-slices-closeup-image-ai-generated-healthy-drink-refreshing-glass-freshly-squeezed-beverage-333187714.jpg"
+                  alt="Tắc xí muội"
+                />
+                <div class="item-info">
+                  <span class="item-name">Tắc xí muội</span
+                  ><span class="price">30</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://media.istockphoto.com/id/167609870/photo/glass-of-orange-juice.jpg?s=1024x1024&w=is&k=20&c=1IWuSOeCfJABXKkfidFX8krr_26TsBMXNo81Ns3_4_c="
+                  alt="Tắc đào Hibicus"
+                />
+                <div class="item-info">
+                  <span class="item-name">Tắc đào Hibicus</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-plastic-cup-sunny-outdoor-market-table-chilled-cubes-realistic-style-urban-background-concept-398255330.jpg"
+                  alt="Chanh hoàng kim"
+                />
+                <div class="item-info">
+                  <span class="item-name">Chanh hoàng kim</span
+                  ><span class="price">30</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-lime-slices-closeup-image-ai-generated-healthy-drink-refreshing-glass-freshly-squeezed-beverage-333187714.jpg"
+                  alt="Chanh nho đen"
+                />
+                <div class="item-info">
+                  <span class="item-name">Chanh nho đen</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://media.istockphoto.com/id/167609870/photo/glass-of-orange-juice.jpg?s=1024x1024&w=is&k=20&c=1IWuSOeCfJABXKkfidFX8krr_26TsBMXNo81Ns3_4_c="
+                  alt="Hibicus xí muội"
+                />
+                <div class="item-info">
+                  <span class="item-name">Hibicus xí muội</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-plastic-cup-sunny-outdoor-market-table-chilled-cubes-realistic-style-urban-background-concept-398255330.jpg"
+                  alt="Đào cam sả"
+                />
+                <div class="item-info">
+                  <span class="item-name">Đào cam sả</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/fresh-orange-juice-ice-lime-slices-closeup-image-ai-generated-healthy-drink-refreshing-glass-freshly-squeezed-beverage-333187714.jpg"
+                  alt="Xoài chanh leo"
+                />
+                <div class="item-info">
+                  <span class="item-name">Xoài chanh leo</span
+                  ><span class="price">45</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://media.istockphoto.com/id/167609870/photo/glass-of-orange-juice.jpg?s=1024x1024&w=is&k=20&c=1IWuSOeCfJABXKkfidFX8krr_26TsBMXNo81Ns3_4_c="
+                  alt="Hoa quả nhiệt đới"
+                />
+                <div class="item-info">
+                  <span class="item-name">Hoa quả nhiệt đới</span
+                  ><span class="price">45</span>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Cột phải -->
-        <div class="column right">
-          <h2>Freeze</h2>
-          <div class="item">
-            <img
-              src="https://images.unsplash.com/photo-1622597478994-27a0a9b175f9?w=100"
-              alt="Freeze matcha"
-            />
-            <div class="name-price">
-              <span class="name special">Freeze matcha</span>
-              <span class="price">50k</span>
-            </div>
-          </div>
-          <div class="item">
-            <img
-              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=100"
-              alt="Freeze việt quất"
-            />
-            <div class="name-price">
-              <span class="name">Freeze việt quất</span>
-              <span class="price">50k</span>
-            </div>
+        <!-- RIGHT COLUMN -->
+        <div class="col right">
+          <div class="section">
+            <h2>Freeze</h2>
+            <ul>
+              <li class="item">
+                <img
+                  src="https://r2-bucket.flowith.net/f/b579cd23a783b2b4/iced_matcha_milk_tea_beverage_index_6%404096x2286.jpeg"
+                  alt="Sinh tố (bơ / xoài)"
+                />
+                <div class="item-info">
+                  <span class="item-name">Sinh tố (bơ / xoài)</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+              <li class="item highlight">
+                <img
+                  src="https://thumbs.dreamstime.com/b/green-matcha-frappuccino-drink-topped-whipped-cream-powder-cold-blended-beverage-clear-plastic-cup-refreshing-sweet-424476836.jpg"
+                  alt="Freeze matcha"
+                />
+                <div class="item-info">
+                  <span class="item-name">Freeze matcha</span
+                  ><span class="price">50</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/green-matcha-frappuccino-drink-topped-whipped-cream-powder-cold-blended-beverage-clear-plastic-cup-refreshing-sweet-424476836.jpg"
+                  alt="Freeze việt quất"
+                />
+                <div class="item-info">
+                  <span class="item-name">Freeze việt quất</span
+                  ><span class="price">50</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://r2-bucket.flowith.net/f/b579cd23a783b2b4/iced_matcha_milk_tea_beverage_index_6%404096x2286.jpeg"
+                  alt="Xoài cốt dừa non"
+                />
+                <div class="item-info">
+                  <span class="item-name">Xoài cốt dừa non</span
+                  ><span class="price">50</span>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          <h2>Sữa chua</h2>
-          <div class="item">
-            <img
-              src="https://images.unsplash.com/photo-1563329346-5e4e6b0a0e6f?w=100"
-              alt="Sữa chua trà xanh"
-            />
-            <div class="name-price">
-              <span class="name">Sữa chua trân châu</span>
-              <span class="price">35k</span>
-            </div>
+          <div class="section">
+            <h2>Sữa chua</h2>
+            <ul>
+              <li class="item">
+                <img
+                  src="https://toplist.vn/images/800px/sua-chua-tran-chau-houjicha-473567.jpg"
+                  alt="Sữa chua trân châu"
+                />
+                <div class="item-info">
+                  <span class="item-name">Sữa chua trân châu</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://amivietnam.com/wp-content/uploads/2024/05/56.png"
+                  alt="Sữa chua nha đam"
+                />
+                <div class="item-info">
+                  <span class="item-name">Sữa chua nha đam</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://toplist.vn/images/800px/sua-chua-tran-chau-houjicha-473567.jpg"
+                  alt="Sữa chua xoài"
+                />
+                <div class="item-info">
+                  <span class="item-name">Sữa chua xoài</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://amivietnam.com/wp-content/uploads/2024/05/56.png"
+                  alt="Sữa chua cacao"
+                />
+                <div class="item-info">
+                  <span class="item-name">Sữa chua cacao</span
+                  ><span class="price">30</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://toplist.vn/images/800px/sua-chua-tran-chau-houjicha-473567.jpg"
+                  alt="Sữa chua hoa quả"
+                />
+                <div class="item-info">
+                  <span class="item-name">Sữa chua hoa quả</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://amivietnam.com/wp-content/uploads/2024/05/56.png"
+                  alt="Sữa chua hạt đác"
+                />
+                <div class="item-info">
+                  <span class="item-name">Sữa chua hạt đác</span
+                  ><span class="price">40</span>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          <h2>Topping</h2>
-          <div class="item">
-            <div class="name-price" style="width: 100%">
-              <span class="name">Trân châu trắng</span>
-              <span class="price">7k</span>
-            </div>
+          <div class="section">
+            <h2>Topping</h2>
+            <ul>
+              <li class="item">
+                <img
+                  src="https://amivietnam.com/wp-content/uploads/2024/05/56.png"
+                  alt="Nha đam"
+                />
+                <div class="item-info">
+                  <span class="item-name">Nha đam</span
+                  ><span class="price">7</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://toplist.vn/images/800px/sua-chua-tran-chau-houjicha-473567.jpg"
+                  alt="Trân châu trắng"
+                />
+                <div class="item-info">
+                  <span class="item-name">Trân châu trắng</span
+                  ><span class="price">7</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://amivietnam.com/wp-content/uploads/2024/05/56.png"
+                  alt="Thạch dừa"
+                />
+                <div class="item-info">
+                  <span class="item-name">Thạch dừa</span
+                  ><span class="price">7</span>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div class="item">
-            <div class="name-price" style="width: 100%">
-              <span class="name">Nhãn đam</span>
-              <span class="price">7k</span>
-            </div>
+
+          <div class="section">
+            <h2>Đồ khô</h2>
+            <ul>
+              <li class="item">
+                <img
+                  src="https://thumbs.dreamstime.com/b/green-matcha-frappuccino-drink-topped-whipped-cream-powder-cold-blended-beverage-clear-plastic-cup-refreshing-sweet-424476836.jpg"
+                  alt="Hướng dương"
+                />
+                <div class="item-info">
+                  <span class="item-name">Hướng dương</span
+                  ><span class="price">15</span>
+                </div>
+              </li>
+              <li class="item">
+                <img
+                  src="https://toplist.vn/images/800px/sua-chua-tran-chau-houjicha-473567.jpg"
+                  alt="Heo khô"
+                />
+                <div class="item-info">
+                  <span class="item-name">Heo khô</span
+                  ><span class="price">20</span>
+                </div>
+              </li>
+              <li class="item highlight">
+                <img
+                  src="https://amivietnam.com/wp-content/uploads/2024/05/56.png"
+                  alt="Nấm té cay"
+                />
+                <div class="item-info">
+                  <span class="item-name">Nấm té cay</span
+                  ><span class="price">35</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <div class="footer">Giá tiền VNĐ cho bảng giá ZERO COFFEE</div>
+      <div class="footer">
+        Giá tính bằng nghìn VNĐ · ZERO COFFEE · Chúc Tết An Khang - Thịnh Vượng
+        2026
+      </div>
     </div>
   </body>
 </html>
