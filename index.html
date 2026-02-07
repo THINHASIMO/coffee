@@ -5,260 +5,250 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZERO COFFEE - Menu</title>
     <style>
-      :root {
-        --blue: #1f4fd8;
-        --light-blue: #eaf0ff;
-        --beige: #f6e8d5;
-        --dark: #1f2937;
-      }
-
       * {
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, sans-serif;
       }
 
       body {
-        margin: 0;
-        background: linear-gradient(135deg, var(--light-blue), #ffffff);
-        padding: 24px;
-        color: var(--dark);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f8f1e9;
+        color: #333;
+        line-height: 1.5;
       }
 
-      .menu {
+      .container {
         max-width: 1000px;
-        margin: auto;
-        background: #fff;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        margin: 0 auto;
+        padding: 20px;
       }
 
       .header {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 24px;
-        background: var(--blue);
-        color: #fff;
-      }
-
-      .header h1 {
-        margin: 0;
-        font-size: 36px;
-        font-weight: 800;
+        background: #1e40af;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        border-radius: 12px 12px 0 0;
+        font-size: 2rem;
+        font-weight: bold;
         letter-spacing: 1px;
       }
 
-      .grid {
+      .menu-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        background: #fffaf0;
+        border-radius: 0 0 12px 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       }
 
-      .col {
-        padding: 24px;
+      .column {
+        padding: 25px 20px;
       }
 
-      .col.left {
-        background: var(--light-blue);
+      .column.left {
+        background: #fefaf5;
+      }
+      .column.right {
+        background: #f5f9ff;
       }
 
-      .col.right {
-        background: var(--beige);
+      h2 {
+        color: #1e40af;
+        font-size: 1.5rem;
+        margin-bottom: 18px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #d1d5db;
       }
 
-      .section {
-        margin-bottom: 28px;
+      .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        gap: 12px;
       }
 
-      .section h2 {
-        margin: 0 0 12px;
-        color: var(--blue);
-        font-size: 22px;
-        border-bottom: 2px solid var(--blue);
-        display: inline-block;
-        padding-bottom: 4px;
+      .item img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
       }
 
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      li {
+      .name-price {
+        flex: 1;
         display: flex;
         justify-content: space-between;
-        padding: 6px 0;
-        font-size: 15px;
+        align-items: center;
+        font-size: 1.05rem;
       }
 
-      li span.price {
-        font-weight: 600;
+      .name {
+        font-weight: 500;
       }
 
-      .highlight {
-        color: #e11d48;
+      .price {
+        color: #dc2626;
+        font-weight: bold;
+        min-width: 50px;
+        text-align: right;
+      }
+
+      .special {
+        color: #c2410c;
         font-weight: 600;
       }
 
       .footer {
         text-align: center;
-        padding: 16px;
-        font-size: 13px;
-        color: #555;
-        background: #f3f4f6;
+        margin-top: 20px;
+        color: #666;
+        font-size: 0.9rem;
       }
 
       @media (max-width: 768px) {
-        .grid {
+        .menu-grid {
           grid-template-columns: 1fr;
+        }
+        .column.left,
+        .column.right {
+          background: #fffaf0;
         }
       }
     </style>
   </head>
   <body>
-    <div class="menu">
-      <div class="header">
-        <h1>ZERO COFFEE</h1>
-      </div>
+    <div class="container">
+      <div class="header">ZERO COFFEE</div>
 
-      <div class="grid">
-        <!-- LEFT -->
-        <div class="col left">
-          <div class="section">
-            <h2>Cà phê phin</h2>
-            <ul>
-              <li><span>Phin đen</span><span class="price">25</span></li>
-              <li><span>Phin sữa</span><span class="price">30</span></li>
-              <li><span>Phin xỉu</span><span class="price">35</span></li>
-              <li>
-                <span class="highlight">Phin muối</span
-                ><span class="price">35</span>
-              </li>
-              <li><span>Phin trứng</span><span class="price">35</span></li>
-              <li>
-                <span class="highlight">Phin chanh đá</span
-                ><span class="price">35</span>
-              </li>
-              <li><span>Cacao muối</span><span class="price">40</span></li>
-            </ul>
+      <div class="menu-grid">
+        <!-- Cột trái -->
+        <div class="column left">
+          <h2>Cà phê phin</h2>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=100"
+              alt="Phin đen"
+            />
+            <div class="name-price">
+              <span class="name">Phin đen</span>
+              <span class="price">25k</span>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1444418185997-1145401129e8?w=100"
+              alt="Phin sữa"
+            />
+            <div class="name-price">
+              <span class="name">Phin sữa</span>
+              <span class="price">30k</span>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=100"
+              alt="Phin muối"
+            />
+            <div class="name-price">
+              <span class="name special">Phin muối</span>
+              <span class="price">35k</span>
+            </div>
           </div>
 
-          <div class="section">
-            <h2>Cà phê máy</h2>
-            <ul>
-              <li><span>Đen máy</span><span class="price">30</span></li>
-              <li><span>Nâu máy</span><span class="price">35</span></li>
-              <li><span>Bạc xỉu</span><span class="price">40</span></li>
-              <li>
-                <span class="highlight">Phê muối</span
-                ><span class="price">40</span>
-              </li>
-              <li><span>Phê trứng</span><span class="price">40</span></li>
-              <li>
-                <span class="highlight">Phê chanh đá</span
-                ><span class="price">40</span>
-              </li>
-            </ul>
+          <h2>Cà phê máy</h2>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=100"
+              alt="Đen máy"
+            />
+            <div class="name-price">
+              <span class="name">Đen máy</span>
+              <span class="price">30k</span>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1577968898878-3f58e3f94c5b?w=100"
+              alt="Nâu máy"
+            />
+            <div class="name-price">
+              <span class="name">Nâu máy</span>
+              <span class="price">35k</span>
+            </div>
           </div>
 
-          <div class="section">
-            <h2>Hoa quả ép</h2>
-            <ul>
-              <li><span>Chanh tươi</span><span class="price">25</span></li>
-              <li>
-                <span>Chanh leo kim quất</span><span class="price">30</span>
-              </li>
-              <li><span>Dứa ép</span><span class="price">30</span></li>
-              <li><span>Cam ép</span><span class="price">35</span></li>
-              <li><span>Cóc ép</span><span class="price">35</span></li>
-              <li><span>Nho Yakult</span><span class="price">35</span></li>
-              <li><span>Ép mix</span><span class="price">40</span></li>
-            </ul>
+          <h2>Trà hoa quả</h2>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1622484212850-eb596d0f1777?w=100"
+              alt="Trà hibiscus"
+            />
+            <div class="name-price">
+              <span class="name">Trà hibiscus</span>
+              <span class="price">35k</span>
+            </div>
           </div>
-
-          <div class="section">
-            <h2>Trà hoa quả</h2>
-            <ul>
-              <li><span>Tắc xí muội</span><span class="price">30</span></li>
-              <li><span>Tắc đào Hibicus</span><span class="price">35</span></li>
-              <li><span>Chanh hoàng kim</span><span class="price">30</span></li>
-              <li><span>Chanh nho đen</span><span class="price">35</span></li>
-              <li><span>Hibicus xí muội</span><span class="price">40</span></li>
-              <li><span>Đào cam sả</span><span class="price">40</span></li>
-              <li><span>Xoài chanh leo</span><span class="price">45</span></li>
-              <li>
-                <span>Hoa quả nhiệt đới</span><span class="price">45</span>
-              </li>
-            </ul>
-          </div>
+          <!-- Thêm các món khác tương tự nếu cần -->
         </div>
 
-        <!-- RIGHT -->
-        <div class="col right">
-          <div class="section">
-            <h2>Freeze</h2>
-            <ul>
-              <li>
-                <span>Sinh tố (bơ / xoài)</span><span class="price">40</span>
-              </li>
-              <li>
-                <span class="highlight">Freeze matcha</span
-                ><span class="price">50</span>
-              </li>
-              <li>
-                <span>Freeze việt quất</span><span class="price">50</span>
-              </li>
-              <li>
-                <span>Xoài cốt dừa non</span><span class="price">50</span>
-              </li>
-            </ul>
+        <!-- Cột phải -->
+        <div class="column right">
+          <h2>Freeze</h2>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1622597478994-27a0a9b175f9?w=100"
+              alt="Freeze matcha"
+            />
+            <div class="name-price">
+              <span class="name special">Freeze matcha</span>
+              <span class="price">50k</span>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=100"
+              alt="Freeze việt quất"
+            />
+            <div class="name-price">
+              <span class="name">Freeze việt quất</span>
+              <span class="price">50k</span>
+            </div>
           </div>
 
-          <div class="section">
-            <h2>Sữa chua</h2>
-            <ul>
-              <li>
-                <span>Sữa chua trân châu</span><span class="price">35</span>
-              </li>
-              <li>
-                <span>Sữa chua nha đam</span><span class="price">35</span>
-              </li>
-              <li><span>Sữa chua xoài</span><span class="price">35</span></li>
-              <li><span>Sữa chua cacao</span><span class="price">30</span></li>
-              <li>
-                <span>Sữa chua hoa quả</span><span class="price">40</span>
-              </li>
-              <li>
-                <span>Sữa chua hạt đác</span><span class="price">40</span>
-              </li>
-            </ul>
+          <h2>Sữa chua</h2>
+          <div class="item">
+            <img
+              src="https://images.unsplash.com/photo-1563329346-5e4e6b0a0e6f?w=100"
+              alt="Sữa chua trà xanh"
+            />
+            <div class="name-price">
+              <span class="name">Sữa chua trân châu</span>
+              <span class="price">35k</span>
+            </div>
           </div>
 
-          <div class="section">
-            <h2>Topping</h2>
-            <ul>
-              <li><span>Nha đam</span><span class="price">7</span></li>
-              <li><span>Trân châu trắng</span><span class="price">7</span></li>
-              <li><span>Thạch dừa</span><span class="price">7</span></li>
-            </ul>
+          <h2>Topping</h2>
+          <div class="item">
+            <div class="name-price" style="width: 100%">
+              <span class="name">Trân châu trắng</span>
+              <span class="price">7k</span>
+            </div>
           </div>
-
-          <div class="section">
-            <h2>Đồ khô</h2>
-            <ul>
-              <li><span>Hướng dương</span><span class="price">15</span></li>
-              <li><span>Heo khô</span><span class="price">20</span></li>
-              <li>
-                <span class="highlight">Nấm té cay</span
-                ><span class="price">35</span>
-              </li>
-            </ul>
+          <div class="item">
+            <div class="name-price" style="width: 100%">
+              <span class="name">Nhãn đam</span>
+              <span class="price">7k</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="footer">Giá tính bằng nghìn VNĐ · ZERO COFFEE</div>
+      <div class="footer">Giá tiền VNĐ cho bảng giá ZERO COFFEE</div>
     </div>
   </body>
 </html>
