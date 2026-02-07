@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZERO COFFEE - Menu Tết 2026</title>
+    <head>
+      <title>ZERO COFFEE – Menu Tết 2026</title>
+
+      <link rel="icon" type="image/png" href="./assets/rounded_icon.png" />
+    </head>
+
     <style>
       :root {
         --blue: #1f4fd8;
@@ -29,6 +34,33 @@
         padding: 24px;
         color: var(--dark);
         min-height: 100vh;
+      }
+
+      /* ===== Custom Scrollbar ===== */
+
+      /* Chrome, Edge, Safari */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.08);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--tet-gold), var(--tet-red));
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, var(--tet-red), var(--tet-gold));
+      }
+
+      /* Firefox */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--tet-gold) rgba(0, 0, 0, 0.08);
       }
 
       .menu {
