@@ -178,6 +178,20 @@
         border-top: 3px solid var(--tet-gold);
       }
 
+      /* Hiệu ứng cuộn mượt */
+      .reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       @media (max-width: 768px) {
         .grid {
           grid-template-columns: 1fr;
@@ -193,64 +207,31 @@
         .header {
           flex-direction: column;
           gap: 15px;
+          padding: 30px 20px 20px;
         }
         .header h1 {
           font-size: 32px;
         }
         .logo {
-          width: 236px;
-          height: 236px;
+          width: 180px;
+          height: 180px;
         }
-        .header {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 40px 28px 28px;
-          background: linear-gradient(135deg, var(--tet-red), var(--tet-gold));
-          color: #fff;
-          position: relative;
-          gap: 28px;
-          flex-wrap: wrap;
-        }
-
         .header-text {
           text-align: center;
         }
-
-        .header-text h1 {
-          margin: 0;
-          font-size: 42px;
-          font-weight: 900;
-          letter-spacing: 3px;
-        }
-
         .info {
           margin-top: 10px;
-          font-size: 15px;
-          line-height: 1.6;
+          font-size: 14px;
+          line-height: 1.5;
           color: #fffbe6;
           text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
         }
 
-        .qr {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 6px;
-        }
-
-        .qr img {
-          width: 96px;
-          height: 96px;
-          background: #fff;
-          padding: 6px;
-          border-radius: 12px;
-          border: 2px solid var(--tet-gold);
-        }
-
-        .qr span {
-          font-size: 12px;
-          color: #fffbe6;
+        .reveal {
+          transform: translateY(30px);
+          transition:
+            opacity 0.7s ease-out,
+            transform 0.7s ease-out;
         }
       }
     </style>
@@ -274,7 +255,7 @@
       <div class="grid">
         <!-- LEFT COLUMN -->
         <div class="col left">
-          <div class="section">
+          <div class="section reveal">
             <h2>Cà phê phin</h2>
             <ul>
               <li class="item">
@@ -350,7 +331,7 @@
             </ul>
           </div>
 
-          <div class="section">
+          <div class="section reveal">
             <h2>Cà phê máy</h2>
             <ul>
               <li class="item">
@@ -416,7 +397,7 @@
             </ul>
           </div>
 
-          <div class="section">
+          <div class="section reveal">
             <h2>Hoa quả ép</h2>
             <ul>
               <li class="item">
@@ -492,7 +473,7 @@
             </ul>
           </div>
 
-          <div class="section">
+          <div class="section reveal">
             <h2>Trà hoa quả</h2>
             <ul>
               <li class="item">
@@ -581,7 +562,7 @@
 
         <!-- RIGHT COLUMN -->
         <div class="col right">
-          <div class="section">
+          <div class="section reveal">
             <h2>Freeze</h2>
             <ul>
               <li class="item">
@@ -627,7 +608,7 @@
             </ul>
           </div>
 
-          <div class="section">
+          <div class="section reveal">
             <h2>Sữa chua</h2>
             <ul>
               <li class="item">
@@ -693,7 +674,7 @@
             </ul>
           </div>
 
-          <div class="section">
+          <div class="section reveal">
             <h2>Topping</h2>
             <ul>
               <li class="item">
@@ -729,7 +710,7 @@
             </ul>
           </div>
 
-          <div class="section">
+          <div class="section reveal">
             <h2>Đồ khô</h2>
             <ul>
               <li class="item">
@@ -769,5 +750,25 @@
 
       <div class="footer">Giá tính bằng nghìn VNĐ · ZERO COFFEE 2026</div>
     </div>
+
+    <script>
+      function revealOnScroll() {
+        const reveals = document.querySelectorAll(".reveal");
+        const windowHeight = window.innerHeight;
+        const threshold = 100; // Hiện sớm hơn một chút để mượt
+
+        reveals.forEach((el) => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < windowHeight - threshold) {
+            el.classList.add("active");
+          }
+          // Không remove "active" để hiệu ứng chỉ chạy 1 lần khi scroll xuống
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll, { passive: true });
+      // Chạy lần đầu khi load trang
+      revealOnScroll();
+    </script>
   </body>
 </html>
