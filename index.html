@@ -208,6 +208,15 @@
         opacity: 1;
         transform: translateY(0);
       }
+      .info .phone-icon {
+        color: var(--tet-gold);
+        font-size: 1.3em;
+        margin-right: 6px;
+        transition: transform 0.3s;
+      }
+      .info .phone-icon:hover {
+        transform: scale(1.2);
+      }
 
       @media (max-width: 768px) {
         .grid {
@@ -248,7 +257,15 @@
           <div class="info">
             <div>📍 124 Ngô Quyền, Hà Đông, Hà Nội</div>
             <div>⏰ 06:30 – 22:30 (Mở cửa hàng ngày)</div>
-            <div>📞 0975 873 678</div>
+            <div>
+              <span class="phone-icon">📞</span>
+              <a
+                href="tel:+84975873678"
+                style="color: #fffbe6; text-decoration: none; font-weight: bold"
+              >
+                0975 873 678
+              </a>
+            </div>
           </div>
         </div>
       </div>
